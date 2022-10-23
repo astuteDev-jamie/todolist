@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do-list</title>
+    <link rel="stylesheet" href="to-do-list.css">
+    <script src="to-do-list.js" type="text/javascript" defer></script>
+    <script src="https://kit.fontawesome.com/f14a298ff2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <i class="fa-solid fa-circle-plus" id="addicon">+</i> -->
+    <div class="header">
+        <h1>To-do List</h1>
+        <nav>
+            <h5 class="banner">Click to add a task</h5>
+            <div class="filltask" data-task >
+                <i class="fa-solid fa-circle-plus icon" id="addicon">+</i>
+                <form action="" data-content>
+                    <div data-taskname>
+                        <label for="taskname">Task</label>
+                        <input type="text" placeholder="to do ...?">
+                    </div>
+                    <div data-date>
+                        <label for="taskdate">Date</label>
+                        <input type="date">
+                    </div>
+                    <div data-time>
+                        <label for="tasktime">Time</label>
+                        <input type="time" size="5" >
+                    </div>
+                    <p id="error"></p>
+                    <div data-buttons style="flex-direction: row; justify-content: space-evenly;">
+                    <button id="add" type="submit">Add</button>
+                    <button id="clean" type="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <div class="taskstatus" data-task>
+                <i class="fa-solid fa-list icon">=</i>
+                <div class="status" data-content>
+                    <h4>Tasks status</h4>
+                    <div id="total">
+                        <span>Total: </span>
+                        <span id="total-value" style="font-weight: bolder;"></span>
+                    </div>
+                    <div id="pending">
+                        <span>Pending: </span>
+                        <span id="pending-value" style="font-weight: bolder;"></span>
+                    </div>
+                    <div id="completed">
+                        <span>Completed: </span>
+                        <span id="completed-value" style="font-weight: bolder;"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="main"></div>
+    
+    </div>
+    &copy;
+</body>
+
+</html>
+
