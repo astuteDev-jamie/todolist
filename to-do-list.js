@@ -1,4 +1,5 @@
 const h5= document.querySelector('h5')
+const filltask = document.querySelector('.filltask')
 const taskButton= document.querySelector('.icons')
 const form = document.querySelector('form')
 const task = document.forms[0].elements[0]
@@ -13,15 +14,6 @@ let completed= document.querySelector('span#completed-value')
 let total= document.querySelector('span#total-value')
 //const taskBar = document.querySelectorAll('div.task-bar')
 
-body.onload= ()=>{
-    console.log(`perfect`)
-        h5.classList.replace('banner','load')
-        taskButton.classList.toggle('rotate')
-        const rotate= setTimeout(()=>{
-            taskButton.classList.toggle('rotate')
-        },700)
-        setTimeout(()=>{clearTimeout(rotate)},700) 
-}
 
 document.addEventListener('click', (e)=>{
     const onTaskButton = e.target.matches('.icon')
@@ -70,26 +62,25 @@ form.addEventListener('submit',(e)=> {
     let error= []
     let d =new Date(date.value+ ' ' +time.value)
 
-    const timer =()=>{
-        let n = new Date()
-        const timeleft =d.getTime() - n.getTime()
+    // const timer =()=>{
+    //     let n = new Date()
+    //     const timeleft =d.getTime() - n.getTime()
         
-        const seconds = 1000;
-        const minutes = seconds*60 ;
-        const hours = minutes* 60;
-        const days = hours *24; 
+    //     const seconds = 1000;
+    //     const minutes = seconds*60 ;
+    //     const hours = minutes* 60;
+    //     const days = hours *24; 
     
-        const day =Math.floor(timeleft/days)
-        const hour =Math.floor((timeleft%days)/hours)
-        const minute =Math.floor((timeleft%hours)/minutes)
-        const second =Math.floor((timeleft%minutes)/seconds);
+    //     const day =Math.floor(timeleft/days)
+    //     const hour =Math.floor((timeleft%days)/hours)
+    //     const minute =Math.floor((timeleft%hours)/minutes)
+    //     const second =Math.floor((timeleft%minutes)/seconds);
         
-        const spanner= document.createElement('span')
-        spanner.innerText=  `${day} :${hour} :${minute} :${second}`
-        return spanner.innerText
-        //I'M STUCK HERE, PLEASE IF YOU CAN MAKE THE TIMER COUNT
-        //WITHOUT INTERFERING WITH NEW TO-DOs I'LL APPRECIATE.
-    }
+    //     const spanner= document.createElement('span')
+    //     spanner.innerText=  `${day} :${hour} :${minute} :${second}`
+    //     return spanner.innerText
+    // }
+    //  <span id="timer"><i>timeleft: </i>${timer()}</span>
     
     const timeFormat = d.toLocaleTimeString('en-GB',{
         hour:'numeric',
@@ -104,18 +95,17 @@ form.addEventListener('submit',(e)=> {
         return
     }
 
-    if (task.value.length>0&&date.value.length>0&&time.value.length>0){
+    if (task.value.length>0&&date.value.length>0){
     const div= document.createElement('div')
     mainSection.append(div)
     div.setAttribute('class','task-bar')
     div.innerHTML= 
     `<p class="tick">Check</p>
     <div class="task">
-        <h3>${taskValue}</h3>
+        <h4>${taskValue}</h4>
         <div class="spans">
             <span id="date">${d.toGMTString()}</span>
             <span id="time">${timeFormat}</span>
-            <span id="timer"><i>timeleft: </i>${timer()}</span>
         </div>
     </div>
     <p class="clear">Clear</p>`
@@ -133,10 +123,11 @@ form.addEventListener('submit',(e)=> {
     })
     
     form.reset()
+    filltask.classList.remove('active')
     mainSection.lastChild.scrollIntoView(false)
     return
     }
-    else error.push(`all fields are required`)
+    else error.push(`task and date are required`)
          vibrateThings(formSpan)
          formSpan.innerText=error
          return
