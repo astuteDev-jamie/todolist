@@ -24,6 +24,25 @@ document.addEventListener('click', (e)=>{
     if ((onTaskButton && task.value.length==0 && date.value.length==0 && time.value.length==0) ||
         (onTaskButton && e.target.closest('.taskstatus'))){
         currentOption= e.target.closest('[data-task]')
+        if (e.target.closest('.filltask')){
+            task.focus()
+            task.addEventListener('keypress',e=>{
+                if (e.key === "Enter") {
+                    e.preventDefault()
+                    date.focus()
+                    date.addEventListener('keypress',e=>{
+                        if (e.key === "Enter") {
+                            addButton.focus()
+                            addEventListener('keypress',e=>{
+                                if (e.key === "Enter") {
+                                    addButton.submit()
+                                }
+                            })
+                        } 
+                    })
+                }   
+            })
+        }
         if (task.value.length<=0){currentOption.classList.toggle('active')}
     } else if (onTaskButton &&(task.value.length>0||date.value.length>0||time.value.length>0))
     {vibrateThings(cleanButton)

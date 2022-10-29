@@ -13,7 +13,7 @@
     }
 
     h1 {
-        font-size: large;
+        font-size: calc(2vmin + 15px);
         margin: 5px;
         padding: 5px;
     }
@@ -57,6 +57,7 @@
     [data-content]{
         box-shadow: 0 7px 5px 2px rgb(239, 248, 250);
         position: absolute;
+        background-color: white;
         /* min-width: 50vw; */
         border-radius: 4px;
         padding: 15px;
@@ -72,7 +73,7 @@
         opacity: 1;
         pointer-events:auto;
         transform: translateY(12px);
-       
+        z-index: 2;
     }
 
     .icon:focus + [data-content]{
@@ -80,7 +81,6 @@
     }
 
     form {
-        background-color: white;
         right: calc(100% - 40px);
         top: calc(100% + 20px);
     }
@@ -126,7 +126,7 @@
 
 
     div.status {
-        background-color:rgb(239, 248, 250);
+        box-shadow: 0 7px 5px 2px rgb(247, 227, 230);
         border: 2px solid deeppink;
         top: calc(100% + 20px);
         right: calc(100% - 8px);
@@ -172,7 +172,7 @@
 
         .task-bar {
             height: max-content;
-            width: 90vmin;
+            width: 95vmin;
             max-width: 600px;
             display: flex;
             align-items: center;
@@ -189,6 +189,8 @@
             justify-content: center;
             background-color:rgb(239, 248, 250);
             margin:0px 5px;
+            border-radius:5px ;
+            border:1px solid deeppink;
         }
 
         .task div.spans{
@@ -201,10 +203,12 @@
         .task h4{
             padding: 0.5vmin 1vmin;
             color: black;
+            font-size: calc(4.9vmin);
         }
 
         .task-bar .clear {
-            padding:1vmin;
+            padding:1.5vmin;
+            border: 1px solid black;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
             /* margin-left: 8px; */
@@ -216,7 +220,8 @@
             cursor: pointer;
         }
         .task-bar .tick {
-            padding: 1vmin;
+            padding: 1.5vmin;
+            border: 1px solid black;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
             /* width: 50px; */
