@@ -15,7 +15,7 @@
     h1 {
         font-size: calc(2vmin + 15px);
         margin: 5px;
-        padding: 5px;
+        padding: 5px 7vw;
     }
 
     nav {
@@ -23,7 +23,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-right: 15px;
+        margin-right: 7vw;
     }
 
 
@@ -42,6 +42,11 @@
         transition: transform 0.7s ease-in-out;
         border-radius: 6px;
         cursor: pointer;
+    }
+    
+    [data-task] button.icon {
+        display: none;
+        padding: 5px;
     }
 
     .fa-solid {
@@ -161,86 +166,118 @@
 
     /*TASKS*/
     .main {
-            margin: 10px auto;
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: deeppink;
-            flex-direction: column;
+        margin: 10px auto;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: deeppink;
+        flex-direction: column;
         }
 
-        .task-bar {
-            height: max-content;
-            width: 95vmin;
-            max-width: 600px;
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            margin: 10px 0px; 
-        }
+    .task-bar {
+        height: max-content;
+        width: 95vmin;
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin: 10px 0px; 
+    }
 
-        .task-bar .task{
-            padding: 2vmin;
-            /* width: 550px; */
-            /* height: 55px; */
-            display: flex;
-            flex-direction:column ;
-            justify-content: center;
-            background-color:rgb(239, 248, 250);
-            margin:0px 5px;
-            border-radius:5px ;
-            border:1px solid deeppink;
-        }
+    .task-bar .task{
+        padding: 2vmin;
+        /* width: 550px; */
+        /* height: 55px; */
+        display: flex;
+        flex-direction:column ;
+        justify-content: center;
+        background-color:rgb(239, 248, 250);
+        margin:0px 5px;
+        border-radius:5px ;
+        border:1px solid deeppink;
+    }
 
-        .task div.spans{
-            margin-top: 2px;
-            display: flex;
-            gap: 2vmin;
-            justify-content: space-between;
-        }
+    .task div.spans{
+        margin-top: 2px;
+        display: flex;
+        gap: 2vmin;
+        justify-content: space-between;
+    }
 
-        .task h4{
-            padding: 0.5vmin 1vmin;
-            color: black;
-            font-size: calc(4.9vmin);
-        }
+    .task h4{
+        padding: 0.5vmin 1vmin;
+        color: black;
+        font-size: calc(4.9vmin);
+    }
 
-        .task-bar .clear {
-            padding:1.5vmin;
-            border: 1px solid black;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-            /* margin-left: 8px; */
-            height: max-content;
-            color: white;
-            background-color: deeppink;
+    .task-bar .clear {
+        padding:1.5vmin;
+        border: 1px solid black;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        /* margin-left: 8px; */
+        height: max-content;
+        color: white;
+        background-color: deeppink;
+        font-weight: bold;
+        font-size: smaller;
+        cursor: pointer;
+    }
+    .task-bar .tick {
+        padding: 1.5vmin;
+        border: 1px solid black;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        /* width: 50px; */
+        /* margin-left: 10px; */
+        /* height: 55px; */
+        color: white;
+        background-color: deeppink;
+        font-weight: bold;
+        font-size: smaller;
+        cursor: pointer;
+    }
+
+    span >#timer ,#date, #time {
+        background-color: black;
+        color: white;
+        padding: 2px 1vmin;
+        border-radius: 4px;
+        font-size: smaller;
+    }
+
+    @media (min-width:650px) {
+
+        [data-task] button.icon {
+            display: inline-block;
             font-weight: bold;
-            font-size: smaller;
-            cursor: pointer;
-        }
-        .task-bar .tick {
-            padding: 1.5vmin;
-            border: 1px solid black;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            /* width: 50px; */
-            /* margin-left: 10px; */
-            /* height: 55px; */
-            color: white;
-            background-color: deeppink;
-            font-weight: bold;
-            font-size: smaller;
-            cursor: pointer;
+            padding: 12px;
         }
 
-        span >#timer ,#date, #time {
-            background-color: black;
-            color: white;
-            padding: 2px 1vmin;
-            border-radius: 4px;
-            font-size: smaller;
+        .fa-solid {
+            padding: 5px;
+            display: none;
         }
+        
+        div.status{
+            font-size: 4vmin;
+            right: calc(100% - 115px);
+            top: calc(100% + 50px);
+            min-width: 220px;
+        }
+
+        form {
+            font-size: 3vmin;
+            right: calc(100% - 130px);
+            top: calc(100% + 50px);
+        }
+
+        form input {
+            padding: 5px 15px;
+            font-size: 3vmin;
+        }
+    }
        
       /*
 
