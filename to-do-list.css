@@ -33,7 +33,7 @@
 
     }
 
-    [data-task] .icon {
+    [data-task] button{
         padding: 11px;
         margin-left: 5px;
         color: white;
@@ -112,7 +112,7 @@
         font-weight: bolder;
     }
 
-    form button {
+    button#add ,button#clean {
         background-color:deeppink ;
         color: white;
         padding: 5px 20px;
@@ -255,7 +255,7 @@
             padding: 12px;
         }
 
-        .fa-solid {
+        #changeicon {
             padding: 5px;
             display: none;
         }
@@ -276,6 +276,14 @@
         form input {
             padding: 5px 15px;
             font-size: 3vmin;
+        }
+
+        .main {
+            align-items:flex-start;
+        }
+
+        .task-bar {
+            margin: 10px 0px 10px 12vmin;
         }
     }
        
